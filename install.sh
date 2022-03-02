@@ -14,6 +14,7 @@ cd moodle
 git branch --track MOODLE_311_STABLE origin/MOODLE_311_STABLE
 git checkout MOODLE_311_STABLE
 cd ..
+cd ..
 chgrp -R www-data public_html
 chgrp -R www-data private_html
 chmod -R g+w private_html
