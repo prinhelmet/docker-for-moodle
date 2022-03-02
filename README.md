@@ -5,6 +5,7 @@ To create the project:
 
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/install.sh > install.sh
 
+chmod +x install.sh
 
 ./install.sh
 
