@@ -10,6 +10,7 @@ mkdir public_html
 mkdir public_html/plugins
 cd public_html
 git clone git://git.moodle.org/moodle.git
+cd moodle
 git branch --track MOODLE_311_STABLE origin/MOODLE_311_STABLE
 git checkout MOODLE_311_STABLE
 cd ..
