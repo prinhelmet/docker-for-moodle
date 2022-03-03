@@ -27,3 +27,4 @@ chmod -R g+w public_html
 chgrp -R www-data private_html
 chmod -R g+w private_html
 
+echo 'Run: docker-compose up -d'
