@@ -1,14 +1,16 @@
 #!/bin/sh
 # install.sh
 
-curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/master/docker-compose.yml > docker-compose.yml
-curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/master/custom-php.ini > custom-php.ini
-
 # Folder structure
 mkdir private_html
 mkdir private_html/moodledata
 mkdir public_html
 mkdir public_html/plugins
+
+# Create installation & configuration files
+curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/master/docker-compose.yml > docker-compose.yml
+curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/master/custom-php.ini > custom-php.ini
+curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/public_html/plugins/config.php > public_html/plugins/config.php
 
 # Moodle Clone from git (or create public_html/moodle)
 cd public_html
@@ -24,3 +26,4 @@ chgrp -R www-data public_html
 chmod -R g+w public_html
 chgrp -R www-data private_html
 chmod -R g+w private_html
+
