@@ -21,5 +21,6 @@ cd ..
 
 # Change groups & Privileges
 chgrp -R www-data public_html
+chmod -R g+w public_html
 chgrp -R www-data private_html
 chmod -R g+w private_html
