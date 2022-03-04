@@ -20,9 +20,8 @@ services:
       - '8080:80'
       - '8443:443'
     volumes:
-      - './public_html/moodle:/var/www/html'
+      - './public_html/html:/var/www/html'
       - './public_html/plugins:/var/www/plugins'
-      - './public_html/plugins/config.php:/var/www/html/config.php'
       - './private_html/moodledata:/var/www/moodledata'
       - './custom-php.ini:/usr/local/etc/php/conf.d/custom-php.ini'
     depends_on:
