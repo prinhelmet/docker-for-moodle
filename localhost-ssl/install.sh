@@ -30,6 +30,11 @@ curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/lo
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/localhost-ssl/Dockerfile > Dockerfile
 docker build -t="localhostsslphp:7.4" .
 
+# Link to config.php for decoupled plugins development
+cd public_html/plugins
+ln -s ../html/config.php
+cd ../..
+
 # Change groups & Privileges
 sudo chgrp -R www-data public_html
 sudo chmod -R g+w public_html
