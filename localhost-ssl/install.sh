@@ -23,12 +23,12 @@ cd ..
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/localhost-ssl/docker-compose.yml > docker-compose.yml
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/custom-php.ini > custom-php.ini
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/localhost-ssl/config.php > public_html/html/config.php
-curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/localhost-ssl/ssl/certs/mycert.crt > ssl/certs
-curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/localhost-ssl/ssl/private/mycert.crt > ssl/private
+curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/localhost-ssl/ssl/certs/mycert.crt > ssl/certs/mycert.crt
+curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/localhost-ssl/ssl/private/mycert.key > ssl/private/mycert.key
 
 # Create Docker image with ssl files & config
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/localhost-ssl/Dockerfile > Dockerfile
-docker build -t="moodlephp7.4" .
+docker build -t="localhostsslphp:7.4" .
 
 # Change groups & Privileges
 sudo chgrp -R www-data public_html
