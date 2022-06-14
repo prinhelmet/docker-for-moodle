@@ -15,17 +15,21 @@ services:
     volumes:
       - 'mariadb_data:/bitnami/mariadb'
   moodle:
-    image: localhostsslphp:7.4
+    build:
+      context: .
+      dockerfile: ./Dockerfile
     ports:
       - '8080:80'
       - '443:443'
     volumes:
+      - 'moodledata_data:/var/www/moodledata'
       - './public_html/html:/var/www/html'
       - './public_html/plugins:/var/www/plugins'
-      - './private_html/moodledata:/var/www/moodledata'
       - './custom-php.ini:/usr/local/etc/php/conf.d/custom-php.ini'
     depends_on:
       - mariadb
 volumes:
   mariadb_data:
+    driver: local
+  moodledata_data:
     driver: local

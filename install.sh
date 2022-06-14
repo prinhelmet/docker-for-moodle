@@ -2,14 +2,11 @@
 # install.sh
 
 # Folder structure
-mkdir private_html
-mkdir private_html/moodledata
-mkdir public_html
-mkdir public_html/plugins
+mkdir -p public_html/plugins
 
 # Create installation & configuration files
-curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/master/docker-compose.yml > docker-compose.yml
-curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/master/custom-php.ini > custom-php.ini
+curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/master/localhost/docker-compose.yml > docker-compose.yml
+curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/master/localhost/custom-php.ini > custom-php.ini
 
 # Moodle Clone from git (or create public_html/moodle)
 cd public_html
@@ -24,10 +21,5 @@ ln -s ../html/config.php
 cd ..
 cd ..
 
-# Change groups & Privileges
-chgrp -R www-data public_html
-chmod -R g+w public_html
-chgrp -R www-data private_html
-chmod -R g+w private_html
-
+echo 'Remember make a symbolic link from -plugins- folder to -html/config.php- file: plugins$ ln -s ../html/config.php'
 echo 'Run: docker-compose up -d'
