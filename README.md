@@ -1,4 +1,4 @@
-# docker-for-moodle
+# Docker for Moodle&trade; Develop over self-signed SSL on localhost
 
 A mínimal configurable stack for Moodle&trade; Developers
 
