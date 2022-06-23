@@ -16,12 +16,13 @@ To create the project requires:
 Download, modify and execute this file:
 
 ```bash
-#!/bin/bash
+
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/localhost-ssl/install.sh > install.sh
 
 chmod +x install.sh
 
 ./install.sh
+
 ```
 
 >This proccess create a folder-tree and clone Moodle&trade; official repo.
