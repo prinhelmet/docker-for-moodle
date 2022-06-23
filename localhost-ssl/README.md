@@ -14,7 +14,9 @@ To create the project requires:
 ### The Simple Install Proccess
 
 Download, modify and execute this file:
-```
+
+```bash
+#!/bin/bash
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/localhost-ssl/install.sh > install.sh
 
 chmod +x install.sh
@@ -26,4 +28,5 @@ chmod +x install.sh
 >When finished you only need to execute `docker-compose up -d` and visit [https://localhost](https://localhost)
 
 ### Some details
+
 [WIP]

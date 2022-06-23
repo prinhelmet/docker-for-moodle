@@ -22,10 +22,11 @@ services:
       - '8080:80'
       - '443:443'
     volumes:
-      - 'moodledata_data:/var/www/moodledata'
-      - './public_html/html:/var/www/html'
-      - './public_html/plugins:/var/www/plugins'
+      - './plugins_repo/plugins:/var/www/plugins'
+      - './moodle:/var/www/html/moodle'
+      - './config.php:/uvar/www/html/moodle/config.php'
       - './custom-php.ini:/usr/local/etc/php/conf.d/custom-php.ini'
+      - 'moodledata_data:/var/www/moodledata'
     depends_on:
       - mariadb
 volumes:

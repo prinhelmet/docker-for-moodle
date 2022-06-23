@@ -22,9 +22,6 @@ $CFG->wwwroot   = 'https://localhost';
 $CFG->dataroot  = '/var/www/moodledata';
 $CFG->admin     = 'admin';
 
-$CFG->debug     = '32767';
-$CFG->debugdisplay = '1';
-
 $CFG->directorypermissions = 0777;
 
 require_once(__DIR__ . '/lib/setup.php');
