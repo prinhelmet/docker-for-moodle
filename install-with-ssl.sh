@@ -20,3 +20,14 @@ curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/lo
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/localhost-ssl/Dockerfile > Dockerfile
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/localhost-ssl/docker-compose.yml > docker-compose.yml
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/localhost-ssl/config.php > moodle/config.php
+curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/localhost-ssl/scripts/puestaapunto.sh > puestaapunto.sh
+curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/localhost-ssl/scripts/instalar_composer.sh > plugins_repo/plugins/instalar_composer.sh
+curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/localhost-ssl/scripts/instalar_moosh.sh > plugins_repo/plugins/instalar_moosh.sh
+
+docker-compose up -d
+
+echo '
+Para finalizar la instalación desatendida e instalar herramientas ejecuta el siguiente script:
+./puestaapunto.sh
+'
+chmod +x puestaapunto.sh
