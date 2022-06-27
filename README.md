@@ -16,11 +16,8 @@ To create the project requires:
 
 Download, modify and execute one of this file:
 
-Without SSL
-```curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/install.sh > install.sh```
-
 OR with SSL (self-signed certificate)
-```curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/install-with-ssl.sh > install.sh```
+```curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/install.sh > install.sh```
 
 Change permision to can execute
 ```chmod +x install.sh```
