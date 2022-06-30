@@ -26,8 +26,9 @@ curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/sc
 
 docker-compose up -d
 
+chmod +x puestaapunto.sh
+
 echo '
 Para finalizar la instalación desatendida e instalar herramientas ejecuta el siguiente script:
 ./puestaapunto.sh
 '
-chmod +x puestaapunto.sh
