@@ -14,13 +14,11 @@ To create the project requires:
 
 ### The Simple Install Proccess
 
-Download, modify and execute one of this file:
-
-OR with SSL (self-signed certificate)
+Execute this script:
 
 ```curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/install.sh > install.sh
 
-chmod +x install.sh```
+chmod +x install.sh
 
 ./install.sh
 ```
