@@ -16,11 +16,13 @@ To create the project requires:
 
 Execute this script:
 
-```curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/install.sh > install.sh
+```
+curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/install.sh > install.sh
 
 chmod +x install.sh
 
 ./install.sh
+
 ```
 
 >This proccess create a folder-tree and clone Moodle&trade; official repo.
