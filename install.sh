@@ -34,6 +34,3 @@ echo '
 Para finalizar la instalación desatendida e instalar herramientas ejecuta el siguiente script:
 ./puestaapunto.sh
 '
-
-# Limpieza:
-rm -rf ./ssl ./scripts ./localhost.conf ./www-data-crontab ./instalar_*.sh

@@ -3,7 +3,7 @@ RUN a2enmod rewrite && a2enmod ssl && a2enmod socache_shmcb && a2enmod proxy && 
 COPY ./ssl /etc/ssl
 COPY ./localhost.conf /etc/apache2/sites-available/
 RUN a2ensite localhost
-COPY ./scripts/* /var/www/html/
+COPY ./plugins_repo/scripts/* /var/www/html/
 RUN chsh --shell /bin/bash www-data
 RUN apt update
 RUN apt install -y nano cron
