@@ -23,9 +23,10 @@ services:
       - '443:443'
     volumes:
       - './moodle:/var/www/html/moodle'
-      - './plugins_repo/plugins:/var/www/plugins'
+      - './plugins_repo/plugins:/var/www/html/plugins'
+      - './plugins_repo/scripts:/var/www/html/scripts'
       - './custom-php.ini:/usr/local/etc/php/conf.d/custom-php.ini'
-      - 'moodledata_data:/var/www/moodledata'
+      - 'moodledata_data:/var/www/html/moodledata'
     depends_on:
       - mariadb
 volumes:

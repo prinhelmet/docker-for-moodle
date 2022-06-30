@@ -2,7 +2,7 @@
 # install.sh
 
 # Folder structure
-mkdir -p plugins_repo/plugins ssl/certs ssl/private
+mkdir -p plugins_repo/plugins plugins_repo/scripts ssl/certs ssl/private
 
 # Generate self-signed certificates
 openssl req -x509 -nodes -days 36500 -newkey rsa:2048 -keyout ./ssl/private/mycert.key -out ./ssl/certs/mycert.crt
@@ -21,8 +21,8 @@ curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/lo
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/localhost-ssl/docker-compose.yml > docker-compose.yml
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/localhost-ssl/config.php > moodle/config.php
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/scripts/puestaapunto.sh > puestaapunto.sh
-curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/scripts/instalar_composer.sh > plugins_repo/plugins/instalar_composer.sh
-curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/scripts/instalar_moosh.sh > plugins_repo/plugins/instalar_moosh.sh
+curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/scripts/instalar_composer.sh > plugins_repo/scripts/instalar_composer.sh
+curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/scripts/instalar_moosh.sh > plugins_repo/scripts/instalar_moosh.sh
 
 docker-compose up -d
 
