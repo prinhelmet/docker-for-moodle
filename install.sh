@@ -25,8 +25,9 @@ curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/sc
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/scripts/instalar_composer.sh > plugins_repo/scripts/instalar_composer.sh
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/scripts/instalar_moosh.sh > plugins_repo/scripts/instalar_moosh.sh
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/scripts/instalar_idiomas.sh > plugins_repo/scripts/instalar_idiomas.sh
+curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/scripts/moodlecron.sh > plugins_repo/scripts/moodlecron.sh
 
-docker-compose up -d
+docker-compose up -d --build
 
 chmod +x puestaapunto.sh
 

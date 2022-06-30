@@ -1,1 +1,1 @@
-* * * * * /var/www/html/moodlecron.sh
+* * * * * /bin/bash /var/www/html/moodlecron.sh
