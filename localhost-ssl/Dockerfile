@@ -8,6 +8,6 @@ RUN chsh --shell /bin/bash www-data
 RUN apt update
 RUN apt install -y nano cron
 RUN service cron start
-COPY ./www-data-crontab /var/spool/cron/crontabs/www-data
-RUN chown www-data:crontab /var/spool/cron/crontabs/www-data
-RUN chmod 0600 /var/spool/cron/crontabs/www-data
+COPY ./www-data-crontab /var/spool/cron/crontabs/root
+RUN chown root:crontab /var/spool/cron/crontabs/root
+RUN chmod 0600 /var/spool/cron/crontabs/root
