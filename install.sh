@@ -20,12 +20,10 @@ curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/lo
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/localhost-ssl/Dockerfile > Dockerfile
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/localhost-ssl/docker-compose.yml > docker-compose.yml
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/localhost-ssl/config.php > moodle/config.php
-curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/localhost-ssl/www-data-crontab > www-data-crontab
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/scripts/puestaapunto.sh > puestaapunto.sh
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/scripts/instalar_composer.sh > plugins_repo/scripts/instalar_composer.sh
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/scripts/instalar_moosh.sh > plugins_repo/scripts/instalar_moosh.sh
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/scripts/instalar_idiomas.sh > plugins_repo/scripts/instalar_idiomas.sh
-curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/scripts/moodlecron.sh > plugins_repo/scripts/moodlecron.sh
 
 docker-compose up -d --build
 
@@ -34,4 +32,5 @@ chmod +x puestaapunto.sh
 echo '
 Para finalizar la instalación desatendida e instalar herramientas ejecuta el siguiente script:
 ./puestaapunto.sh
+Esto instalará moodle y activará el cron.
 '

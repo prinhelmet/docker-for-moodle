@@ -4,10 +4,14 @@ COPY ./ssl /etc/ssl
 COPY ./localhost.conf /etc/apache2/sites-available/
 RUN a2ensite localhost
 COPY ./plugins_repo/scripts/* /var/www/html/
+RUN chmod +x /var/www/html/*.sh
+RUN /bin/bash /var/www/html/instalar_composer.sh
+RUN /bin/bash /var/www/html/instalar_moosh.sh
+RUN /bin/bash /var/www/html/instalar_idiomas.sh
+RUN chown -R www-data:www-data /var/www/html/moodle*
+RUN echo "alias ll='ls --color=auto -lha'" >> /root/.bashrc
 RUN chsh --shell /bin/bash www-data
 RUN apt update
 RUN apt install -y nano cron
-COPY ./www-data-crontab /var/spool/cron/crontabs/root
-RUN chown root:crontab /var/spool/cron/crontabs/root
-RUN chmod 0600 /var/spool/cron/crontabs/root
-RUN service cron start
+RUN touch /var/www/html/crontab.log
+RUN (crontab -l -u root; echo "* * * * * su - www-data -c '/usr/local/bin/php /var/www/html/moodle/admin/cli/cron.php' > /var/www/html/crontab.log 2>&1") | crontab
