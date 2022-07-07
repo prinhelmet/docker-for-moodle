@@ -8,10 +8,11 @@ RUN chmod +x /var/www/html/*.sh
 RUN /bin/bash /var/www/html/instalar_composer.sh
 RUN /bin/bash /var/www/html/instalar_moosh.sh
 RUN /bin/bash /var/www/html/instalar_idiomas.sh
-RUN chown -R www-data:www-data /var/www/html/moodle*
+RUN chown -R www-data:www-data /var/www/html/moodledata
 RUN echo "alias ll='ls --color=auto -lha'" >> /root/.bashrc
 RUN chsh --shell /bin/bash www-data
 RUN apt update
 RUN apt install -y nano cron
 RUN touch /var/www/html/crontab.log
 RUN (crontab -l -u root; echo "* * * * * su - www-data -c '/usr/local/bin/php /var/www/html/moodle/admin/cli/cron.php' > /var/www/html/crontab.log 2>&1") | crontab
+RUN ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime

@@ -2,7 +2,7 @@
 # install.sh
 
 # Folder structure
-mkdir -p plugins_repo/plugins plugins_repo/scripts ssl/certs ssl/private
+mkdir -p plugins_repo/plugins plugins_repo/scripts ssl/certs ssl/private contrib
 
 # Generate self-signed certificates
 openssl req -x509 -nodes -days 36500 -newkey rsa:2048 -keyout ./ssl/private/mycert.key -out ./ssl/certs/mycert.crt
@@ -29,8 +29,8 @@ docker-compose up -d --build
 
 chmod +x puestaapunto.sh
 
-echo '
-Para finalizar la instalación desatendida e instalar herramientas ejecuta el siguiente script:
-./puestaapunto.sh
-Esto instalará moodle y activará el cron.
-'
+echo 'Para realziar la instalación desatendida ejecuta el siguiente script:
+./puestaapunto.sh'
+
+# Eliminar restos instalación
+rm -rf ./ssl ./localhost.conf ./plugins_repo/scripts/*

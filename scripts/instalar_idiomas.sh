@@ -4,6 +4,13 @@ echo "Instalando idiomas..."
 echo "Creando carpeta /var/www/html/moodledata/lang"
 mkdir -p /var/www/html/moodledata/lang
 
+echo "Descargando paquete de idioma: es.zip"
+curl -O https://download.moodle.org/langpack/3.11/es.zip
+echo "Descomprimiendo paquete de idioma: es.zip"
+unzip -q es.zip -d /var/www/html/moodledata/lang/
+echo "Elimiinado paquete de idioma: es.zip"
+rm -f es.zip
+
 echo "Descargando paquete de idioma: ca.zip"
 curl -O https://download.moodle.org/langpack/3.11/ca.zip
 echo "Descomprimiendo paquete de idioma: ca.zip"

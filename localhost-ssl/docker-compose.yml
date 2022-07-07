@@ -23,8 +23,9 @@ services:
       - '443:443'
     volumes:
       - './moodle:/var/www/html/moodle'
-      - './plugins_repo/plugins:/var/www/html/plugins'
-      - './plugins_repo/scripts:/var/www/html/scripts'
+      - './repo_privado/plugins:/var/www/html/plugins'
+      - './repo_privado/scripts:/var/www/html/scripts'
+      - './contrib:/var/www/html/contrib'
       - './custom-php.ini:/usr/local/etc/php/conf.d/custom-php.ini'
       - 'moodledata_data:/var/www/html/moodledata'
     depends_on:
