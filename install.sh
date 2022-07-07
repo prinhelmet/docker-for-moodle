@@ -2,7 +2,7 @@
 # install.sh
 
 # Folder structure
-mkdir -p plugins_repo/plugins plugins_repo/scripts ssl/certs ssl/private contrib
+mkdir -p repo_privado/plugins repo_privado/scripts ssl/certs ssl/private contrib
 
 # Generate self-signed certificates
 openssl req -x509 -nodes -days 36500 -newkey rsa:2048 -keyout ./ssl/private/mycert.key -out ./ssl/certs/mycert.crt
@@ -21,9 +21,9 @@ curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/lo
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/localhost-ssl/docker-compose.yml > docker-compose.yml
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/localhost-ssl/config.php > moodle/config.php
 curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/scripts/puestaapunto.sh > puestaapunto.sh
-curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/scripts/instalar_composer.sh > plugins_repo/scripts/instalar_composer.sh
-curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/scripts/instalar_moosh.sh > plugins_repo/scripts/instalar_moosh.sh
-curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/scripts/instalar_idiomas.sh > plugins_repo/scripts/instalar_idiomas.sh
+curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/scripts/instalar_composer.sh > repo_privado/scripts/instalar_composer.sh
+curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/scripts/instalar_moosh.sh > repo_privado/scripts/instalar_moosh.sh
+curl -sSL https://raw.githubusercontent.com/prinhelmet/docker-for-moodle/main/scripts/instalar_idiomas.sh > repo_privado/scripts/instalar_idiomas.sh
 
 docker-compose up -d --build
 
@@ -33,4 +33,4 @@ echo 'Para realziar la instalación desatendida ejecuta el siguiente script:
 ./puestaapunto.sh'
 
 # Eliminar restos instalación
-rm -rf ./ssl ./localhost.conf ./plugins_repo/scripts/*
+rm -rf ./ssl ./localhost.conf ./repo_privado/scripts/*

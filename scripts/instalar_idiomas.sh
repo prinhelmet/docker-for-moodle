@@ -46,5 +46,6 @@ unzip -q gl.zip -d /var/www/html/moodledata/lang/
 echo "Elimiinado paquete de idioma: gl.zip"
 rm -f gl.zip
 
-echo "Cambiando propietario y grupo www-data a la carpeta /var/www/html/moodledata/lang"
+echo "Cambiando permisos, propietario y grupo www-data a la carpeta /var/www/html/moodledata/lang"
+chmod -R 777 /var/www/html/moodledata/lang
 chown -R www-data:www-data /var/www/html/moodledata/lang

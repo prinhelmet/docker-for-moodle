@@ -3,7 +3,8 @@ RUN a2enmod rewrite && a2enmod ssl && a2enmod socache_shmcb && a2enmod proxy && 
 COPY ./ssl /etc/ssl
 COPY ./localhost.conf /etc/apache2/sites-available/
 RUN a2ensite localhost
-COPY ./plugins_repo/scripts/* /var/www/html/
+RUN mv /usr/local/etc/php/conf.d/docker-php-ext-oci8.ini /usr/local/etc/php/conf.d/docker-php-ext-oci8.ini_back
+COPY ./repo_privado/scripts/* /var/www/html/
 RUN chmod +x /var/www/html/*.sh
 RUN /bin/bash /var/www/html/instalar_composer.sh
 RUN /bin/bash /var/www/html/instalar_moosh.sh
