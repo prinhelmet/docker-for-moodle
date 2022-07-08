@@ -34,3 +34,6 @@ echo 'Para realziar la instalación desatendida ejecuta el siguiente script:
 
 # Eliminar restos instalación
 rm -rf ./ssl ./localhost.conf ./repo_privado/scripts/*
+
+# Enlazar config.php para carpeta de plugins externos
+ln -s /var/www/html/moodle/config.php contrib/config.php
